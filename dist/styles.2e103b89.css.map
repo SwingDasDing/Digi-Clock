@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.scss"],"names":[],"mappings":"AAAA,UAEI,aAAA,CACA,eAAA,CACA,gBAAA","file":"styles.2e103b89.css","sourceRoot":"..\\src","sourcesContent":["html,\r\nbody {\r\n    margin: 0 auto;\r\n    overflow: hidden;\r\n    user-select: none;\r\n}\r\n"]}
