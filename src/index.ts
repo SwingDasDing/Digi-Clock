@@ -7,12 +7,13 @@ import { Point } from './classes/point.class';
 class Main {
     private _canvas: HTMLCanvasElement;
     private _context: CanvasRenderingContext2D;
-
     private numbers: SegNumber[];
-
     private colons: Colon[];
-
     private segSpacing = Segment.width * 1.4;
+
+    private _redSlider: HTMLInputElement;
+    private _greenSlider: HTMLInputElement;
+    private _blueSlider: HTMLInputElement;
 
     private clockCenter = new Point(
         this.segSpacing * 3 + (Segment.height * 1.8) / 2,
@@ -21,10 +22,23 @@ class Main {
 
     constructor() {
         this._canvas = document.querySelector('#canvasEl');
+
+        this._redSlider = document.querySelector(
+            '#colorRRange'
+        ) as HTMLInputElement;
+        this._greenSlider = document.querySelector(
+            '#colorGRange'
+        ) as HTMLInputElement;
+        this._blueSlider = document.querySelector(
+            '#colorBRange'
+        ) as HTMLInputElement;
+
         this.init();
     }
 
     public init(): void {
+        this.initialiseControls();
+
         this._context = this._canvas.getContext('2d');
         this._canvas.width = window.innerWidth;
         this._canvas.height = window.innerHeight;
@@ -105,6 +119,15 @@ class Main {
             .toString()
             .padStart(2, '0')
             .split('');
+    }
+
+    private initialiseControls() {
+        this._redSlider.oninput = (e: Event) =>
+            (Segment.red = parseInt(this._redSlider.value));
+        this._greenSlider.oninput = (e: Event) =>
+            (Segment.green = parseInt(this._greenSlider.value));
+        this._blueSlider.oninput = (e: Event) =>
+            (Segment.blue = parseInt(this._blueSlider.value));
     }
 }
 

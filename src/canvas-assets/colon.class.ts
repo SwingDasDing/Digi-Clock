@@ -14,9 +14,9 @@ export class Colon {
     public draw(): void {
         this.context.save();
 
-        this.context.fillStyle = `rgba(255,255,255,${
-            this.active ? 0.8 : 0.04
-        })`;
+        this.context.fillStyle = `rgba(${Segment.red},${Segment.green},${
+            Segment.blue
+        },${this.active ? 0.8 : 0.04})`;
 
         this.context.translate(this.position.x, this.position.y);
 

@@ -3,4 +3,22 @@ body {
     margin: 0 auto;
     overflow: hidden;
     user-select: none;
+
+    #controls {
+        position: absolute;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        padding: 10px;
+
+        .control {
+            display: inline-flex;
+        }
+
+        p {
+            margin: 5px;
+            width: 50px;
+        }
+    }
 }

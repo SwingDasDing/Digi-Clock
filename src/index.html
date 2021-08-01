@@ -7,8 +7,41 @@
         <title>Digi-Clock</title>
         <link rel="stylesheet" href="./styles.scss" />
     </head>
-    <body oncontextmenu="return false;">
-        <canvas id="canvasEl" oncontextmenu="return false"></canvas>
+    <body>
+        <canvas id="canvasEl"></canvas>
+
+        <div id="controls">
+            <span class="control">
+                <p>Red</p>
+                <input
+                    type="range"
+                    min="0"
+                    max="255"
+                    value="255"
+                    id="colorRRange"
+                />
+            </span>
+            <span class="control">
+                <p>Green</p>
+                <input
+                    type="range"
+                    min="0"
+                    max="255"
+                    value="255"
+                    id="colorGRange"
+                />
+            </span>
+            <span class="control">
+                <p>Blue</p>
+                <input
+                    type="range"
+                    min="0"
+                    max="255"
+                    value="255"
+                    id="colorBRange"
+                />
+            </span>
+        </div>
         <script src="./index.ts"></script>
     </body>
 </html>

@@ -9,21 +9,25 @@ export class Segment {
 
     private static readonly wid = 0.23; // Base height ratio
     private static readonly len = 1; // Base width ratio
-    private static readonly mult = 100; // Size multiplier - Change this to change the size of the numbers
+    private static mult = 100; // Size multiplier - Change this to change the size of the numbers
 
     public static height: number = Segment.wid * Segment.mult;
     public static width: number = Segment.len * Segment.mult;
 
     public static padding: number = Segment.height * 0.08;
 
+    public static red = 255;
+    public static green = 255;
+    public static blue = 255;
+
     public active: boolean = true;
 
     public draw(): void {
         this.context.save();
 
-        this.context.fillStyle = `rgba(255,255,255,${
-            this.active ? 0.8 : 0.04
-        })`;
+        this.context.fillStyle = `rgba(${Segment.red},${Segment.green},${
+            Segment.blue
+        },${this.active ? 0.8 : 0.04})`;
 
         this.context.translate(this.position.x, this.position.y);
 
